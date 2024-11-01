@@ -1,0 +1,2 @@
+# compower_share_golang
+使用go语言构建一个包含了时间槽分配算法的系统
