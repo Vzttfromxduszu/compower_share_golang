@@ -20,13 +20,13 @@ func main() {
 	}
 
 	// Migrate the schema
-	db.AutoMigrate(&models.Task{})
+	db.AutoMigrate(&models.Userinfo{})
 
 	// Create
-	task := &models.Task{}
-	task.ID = 1
-	task.Computation = "10"
-	db.Create(task)
+	user := &models.Userinfo{}
+	user.ID = 1
+	user.Username = "vzt1"
+	db.Create(user)
 
 	// Read
 	//   var product Product
