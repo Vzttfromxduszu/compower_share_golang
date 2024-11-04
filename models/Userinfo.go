@@ -1,6 +1,7 @@
 package models
 
 import (
+	utils "github.com/Vzttfromxduszu/compower_share_golang/utils"
 	"gorm.io/gorm"
 )
 
@@ -15,4 +16,10 @@ type Userinfo struct {
 
 func (b *Userinfo) TableNameuser() string {
 	return "userinfo"
+}
+
+func GetUserList() []*Userinfo {
+	data := make([]*Userinfo, 10)
+	data = utils.DB.Find(&data)
+	return data
 }

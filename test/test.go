@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/Vzttfromxduszu/compower_share_golang/models"
 
 	"gorm.io/driver/mysql"
@@ -20,12 +22,15 @@ func main() {
 	}
 
 	// Migrate the schema
-	db.AutoMigrate(&models.Userinfo{})
+	err = db.AutoMigrate(&models.Userinfo{})
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	// Create
 	user := &models.Userinfo{}
-	user.ID = 1
-	user.Username = "vzt1"
+	user.ID = 2
+	user.Username = "vzt2"
 	db.Create(user)
 
 	// Read

@@ -1,0 +1,2 @@
+mysql:
+  dns: root:Atonng...@tcp(127.0.0.1:3306)/compower?charset=utf8&parseTime=True&loc=Local
