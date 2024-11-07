@@ -1,6 +1,7 @@
 package models
 
 import (
+	utils "github.com/Vzttfromxduszu/compower_share_golang/utils"
 	"gorm.io/gorm"
 )
 
@@ -14,4 +15,10 @@ type Task struct {
 
 func (b *Task) TableNametask() string {
 	return "task"
+}
+
+func GetTaskList() []*Task {
+	data := make([]*Task, 10)
+	utils.DB.Find(&data)
+	return data
 }

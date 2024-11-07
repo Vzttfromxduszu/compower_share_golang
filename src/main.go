@@ -8,7 +8,7 @@ import (
 func main() {
 	utils.InitDB()
 	utils.InitConfig()
-	r := router.Router()
+	r := router.RouterTask()
 	r.Run(":8081")
 
 }

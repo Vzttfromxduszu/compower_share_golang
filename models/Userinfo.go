@@ -20,6 +20,10 @@ func (b *Userinfo) TableNameuser() string {
 
 func GetUserList() []*Userinfo {
 	data := make([]*Userinfo, 10)
-	data = utils.DB.Find(&data)
+	utils.DB.Find(&data)
 	return data
+}
+
+func CreateUser(oneuser Userinfo) *gorm.DB {
+	return utils.DB.Create(&oneuser)
 }
